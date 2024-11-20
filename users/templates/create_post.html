@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %} Create Post {% endblock %}
+
+
+{% block body %}
+        
+    <div class="container pt-5">
+        <p class="h3 text-center text-white bg-dark p-3">Create Post</p>
+        <form action="{% url 'create_post' %}" method="post">
+            {% csrf_token %}
+            <label for="">Title:</label><br>
+            <input required type="text" class="form-control" name="title"><br>
+            <label for="">Comment:</label><br>
+            <input required type="text" class="form-control" name="content"><br>
+            <label for="">Date:</label><br>
+            <input type="file" name="image">
+            <input type="date" class="form-control" name="date"><br>
+            <input type="submit" value="Submit" class="btn btn-primary ">
+        </form>
+    </div>
+
+
+
+{% endblock %}
