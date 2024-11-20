@@ -76,3 +76,6 @@ def Logout_page(request):
     logout(request)
     messages.warning(request,'You have Successfully LoggedOut!')
     return redirect('home')
+
+def example(request):
+    return HttpResponse('hello')
